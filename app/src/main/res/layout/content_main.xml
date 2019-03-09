@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/main_linearL"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_line"
+        />
+
+    <View
+        android:id="@+id/main_line"
+        style="@style/style_gray_line"
+        android:layout_above="@id/main_radioGroup"
+        />
+
+    <RadioGroup
+        android:id="@+id/main_radioGroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        >
+        <RadioButton
+            android:id="@+id/main_creditManager"
+            android:checked="true"
+            android:text="学分管理"
+            style="@style/style_main_radioButton" />
+
+        <RadioButton
+            android:id="@+id/main_projectManager"
+            android:text="项目管理"
+            style="@style/style_main_radioButton" />
+
+        <RadioButton
+            android:id="@+id/main_employeeManager"
+            android:text="人员管理"
+            android:button="@null"
+            style="@style/style_main_radioButton" />
+    </RadioGroup>
+
+</RelativeLayout>

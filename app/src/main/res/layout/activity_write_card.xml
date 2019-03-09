@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:floatview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollViewWriteTag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center"
+        android:background="#eeeeee"
+        >
+
+        <ImageView
+            android:src="@mipmap/write_card_careful"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="6dp"/>
+
+        <TextView
+            style="@style/style_write_card_text"
+            android:gravity="center"
+            android:text="请再三确认输入正确的医通卡号，一张医通卡只能写入一次！" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutWriteTag"
+        style="@style/style_write_card_linear"
+        >
+        <com.st.view.widget.FloatingLable
+            android:id="@+id/editTextWriteTagSector"
+            style="@style/style_write_card_lable"
+
+            floatview:floatHintText="@string/text_sector"
+            floatview:isEditable="false"
+            floatview:isFocusableInTouchMode="false"
+
+            android:visibility="gone"
+            />
+
+        <View
+            style="@style/style_gray_line"
+            android:visibility="gone"
+            />
+
+        <com.st.view.widget.FloatingLable
+            android:id="@+id/editTextWriteTagBlock"
+            style="@style/style_write_card_lable"
+
+            floatview:floatHintText="@string/text_block"
+            floatview:isEditable="false"
+            floatview:isFocusableInTouchMode="false"
+            android:visibility="gone"
+            />
+
+        <View
+            style="@style/style_gray_line"
+
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+    <com.st.view.widget.FloatingLable
+        android:id="@+id/editTextWriteTagData"
+        style="@style/style_write_card_lable"
+
+        floatview:textNumberStyle="number"
+        floatview:floatHintText="@string/text_data"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp"
+
+        />
+
+    <View
+        style="@style/style_gray_line"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/write_cardRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <Button
+        android:id="@+id/buttonWriteTagBlock"
+        android:onClick="onWriteBlock"
+        android:text="写入医通卡号"
+        style="@style/style_write_card_button"
+        android:layout_gravity="bottom"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/linearLayoutCreateKeyMapKeyFiles"
+        android:visibility="gone"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textViewCreateKeyMapFromTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="3dp"
+            android:text="@string/text_sector_range_all"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/blue" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.framework.widget.ui.UIDrawLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!--主界面-->
+    <LinearLayout
+        android:id="@+id/cme_main"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary_dark"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/course_swipeRefresh"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/course_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+
+            <TextView
+                android:id="@+id/main_text"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="请先缓存课题和人员信息，然后再重新离线登录！"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_18"
+                android:visibility="gone"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!--侧滑菜单-->
+    <LinearLayout
+        android:clickable="true"
+        android:orientation="vertical"
+        android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/content_menu"/>
+    </LinearLayout>
+
+</com.framework.widget.ui.UIDrawLayout>

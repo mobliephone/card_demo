@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:floatview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/RelativeLayout01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center"
+                android:background="#eeeeee"
+                >
+
+                <ImageView
+                    android:src="@mipmap/write_card_careful"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="6dp"/>
+
+                <TextView
+                    style="@style/style_write_card_text"
+                    android:gravity="center"
+                    android:text="请再三确认输入正确的医通卡号！" />
+
+            </LinearLayout>
+
+            <com.st.view.widget.FloatingLable
+                android:id="@+id/editTextWriteTagData"
+                style="@style/style_write_card_lable"
+
+                floatview:textNumberStyle="number"
+                floatview:floatHintText="@string/text_data"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+
+                />
+
+            <View
+                style="@style/style_gray_line"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/write_cardRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <Button
+                android:id="@+id/select_finger"
+                android:onClick="onInputFinger"
+                android:text="请选择手指"
+                style="@style/style_write_card_button"
+                />
+
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/EnrollmentTextView"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="@dimen/text_16"
+        android:textColor="@color/black"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/linearLayoutCreateKeyMapKeyFiles"
+        android:visibility="gone"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textViewCreateKeyMapFromTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="3dp"
+            android:text="@string/text_sector_range_all"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/blue" />
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+

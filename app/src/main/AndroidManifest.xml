@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.st">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!--NFC扫描权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.NFC" />
+
+    <!--扫描一维码权限-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--震动权限-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!-- 用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!-- 访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature android:name="android.hardware.usb.host" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <application
+        android:name=".CMEApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true"
+        android:configChanges="orientation|keyboardHidden|screenSize"  >
+
+        <activity android:name=".activity.LauncherActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".activity.CMEActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateHidden"
+            android:launchMode="standard"
+            >
+            <!-- NFC Tech Filter -->
+           <!-- <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>-->
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech_filter" />
+
+        </activity>
+
+        <activity android:name=".activity.LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            />
+
+        <!--NFC-->
+        <activity android:name=".nfc.activity.DumpEditorActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+
+        <activity android:name=".nfc.activity.FileChooserActivity"
+            />
+
+        <activity android:name=".nfc.activity.KeyMapCreatorActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+
+        <activity android:name=".nfc.activity.PreferencesActivity"
+            android:configChanges="orientation|screenSize"
+            />
+
+        <activity android:name=".nfc.activity.TagInfoToolActivity"
+            android:configChanges="orientation|screenSize"
+            />
+
+        <!--NFC-->
+
+
+        <!--摄像机扫描一维码-->
+        <activity android:name=".zxing.CommonScanActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+
+        <!--课题修改-->
+        <activity android:name=".activity.project.CourseInfoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+
+        <!--开发者申请的Key-->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="CCOgFjN0UDaWvfikzGlib4WQ5QtbQBac">
+        </meta-data>
+
+        <service android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+        </service>
+
+        <!--GPS Service-->
+        <service android:name=".service.GPSLocationService"
+            android:enabled="true"
+            android:process=":remote">
+        </service>
+
+        <!--搜索Activity-->
+        <activity android:name=".activity.SearchActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+
+        <!--打卡界面与查看课题-->
+        <activity android:name=".activity.project.PunchCardActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <!--引导界面-->
+        <activity android:name=".activity.GuideActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+
+        <!--打卡返回结果-->
+        <activity android:name=".activity.project.PayByCardResultActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            >
+        </activity>
+
+        <!--写入医通卡-->
+        <activity android:name=".activity.project.WriteCardActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+
+        <!--写入医通卡执行界面-->
+        <activity android:name=".activity.project.WriteCardResultActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/CustomActivityDialogStyle"
+        />
+
+        <!--打卡记录统计-->
+        <activity android:name=".activity.project.CardRecordActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+
+        <!--上传打卡记录Service-->
+        <service android:name=".service.UpRecordService"
+           >
+        </service>
+        <!--上传打卡记录广播-->
+        <receiver android:name=".service.broadcast.CMEReceiver">
+            <intent-filter>
+                <action android:name="startUpRecordService" />
+            </intent-filter>
+        </receiver>
+
+        <!--APP捕获异常-->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="ce0b48310480751cf519d4b46020414b4ab41858" />
+
+        <!--设置-->
+        <activity android:name=".activity.SettingActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+        <!--scan扫描-->
+        <activity android:name=".activity.scan.ScanActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <!--指纹操作-->
+        <activity android:name=".activity.finger.FingerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" android:resource="@xml/device_filter" />
+        </activity>
+
+        <!--指纹图片-->
+        <activity android:name=".activity.finger.help.FPDisplay"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:floatview="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.st.view.widget.FloatingLable
+                android:id="@+id/coursesTask"
+                style="@style/style_label_float"
+                floatview:floatHintText="课题："
+                android:focusable="false"
+                />
+
+            <View
+                style="@style/style_gray_line"
+                />
+
+            <com.st.view.widget.FloatingLable
+                android:id="@+id/proName"
+                style="@style/style_label_float"
+                floatview:floatHintText="项目名称："
+                />
+
+            <View
+                style="@style/style_gray_line"
+                />
+
+            <com.st.view.widget.FloatingLable
+                android:id="@+id/deptName"
+                style="@style/style_label_float"
+                floatview:floatHintText="部门名称："
+                />
+
+            <View
+                style="@style/style_gray_line"
+                />
+
+            <com.st.view.widget.FloatingLable
+                android:id="@+id/placeName"
+                style="@style/style_label_float"
+                floatview:floatHintText="举办地点："
+                />
+
+            <View
+                style="@style/style_gray_line"
+                />
+
+            <com.st.view.widget.FloatingLable
+                android:id="@+id/teacherName"
+                style="@style/style_label_float"
+                floatview:floatHintText="老师姓名："
+                />
+
+            <View
+                style="@style/style_gray_line"
+                />
+
+            <com.st.view.widget.FloatingLable
+                android:id="@+id/credit"
+                style="@style/style_label_float"
+                floatview:floatHintText="学分："
+                floatview:textNumberStyle="number"
+                />
+
+            <View
+                style="@style/style_gray_line"
+                />
+
+            <com.st.view.widget.FloatingLable
+                android:id="@+id/startDate"
+                style="@style/style_label_float"
+                floatview:floatHintText="开始日期："
+                floatview:isEditable="false"
+                floatview:isFocusableInTouchMode="false"
+                />
+
+            <View
+                style="@style/style_gray_line"
+                />
+
+            <com.st.view.widget.FloatingLable
+                android:id="@+id/endDate"
+                style="@style/style_label_float"
+                floatview:floatHintText="结束日期："
+                floatview:isEditable="false"
+                floatview:isFocusableInTouchMode="false"
+                />
+
+            <View
+                style="@style/style_gray_line"
+                />
+
+            <com.st.view.widget.FloatingLable
+                android:id="@+id/edu_obj_count"
+                style="@style/style_label_float"
+                floatview:floatHintText="教学人数："
+                floatview:textNumberStyle="number"
+                />
+
+            <View
+                style="@style/style_gray_line"
+                />
+
+            <Button
+                android:id="@+id/updateCourse"
+                style="@style/style_label_button"
+                android:text="确认提交"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

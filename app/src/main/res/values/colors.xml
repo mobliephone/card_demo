@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--状态栏背景色-->
+    <color name="colorPrimaryDark">@color/primary_dark</color>
+    <!--App bar 上的标题与更多菜单中的文字颜色-->
+    <color name="textColorPrimary">@color/white</color>
+    <!--Actionbar 的背景色设定在 style 中的 colorPrimary。-->
+    <color name="colorPrimary">@color/primary_dark</color>
+    <!--各控制元件(如：check box、switch 或是 radoi) 被勾选 (checked) 或是选定 (selected) 的颜色。-->
+    <color name="colorAccent">@color/primary_dark</color>
+    <!--各控制元件的预设颜色。-->
+    <color name="colorControlNormal">@color/white</color>
+    <!--导航栏的背景色，但只能用在 API Level 21 (Android 5) 以上的版本-->
+    <color name="navigationBarColor">@color/primary_dark</color>
+    <color name="primary_dark">#607de3</color>
+
+    <color name="white">#ffffff</color>
+    <color name="whiteSmoke">#f3f5f7</color>
+    <color name="textGray">#696969</color>
+    <color name="patient3">#57E59B</color>
+    <color name="patient1">#fb807b</color>
+    <color name="patient2">#68b9d4</color>
+
+
+    <color name="gray">#7f000000</color>
+    <color name="button_gray">#7ff2efef</color>
+    <color name="black">#000000</color>
+    <color name="dictdialog_bg_gray">#f5f5f5</color>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--NFC-->
+    <color name="blue">#3366FF</color>
+    <color name="light_green">#66FF66</color>
+    <color name="dark_green">#338800</color>
+    <color name="orange">#FF6600</color>
+    <color name="purple">#9933FF</color>
+    <color name="yellow">#CCCC00</color>
+    <color name="red">#FF0000</color>
+    <color name="light_gray">#DDDDDD</color>
+    <color name="middle_gray">#444444</color>
+    <color name="dark_gray">#222222</color>
+</resources>

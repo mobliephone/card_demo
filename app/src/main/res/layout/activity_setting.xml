@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f6fafa"
+    android:orientation="vertical" >
+
+
+    <TextView
+        android:text="同步设置"
+        style="@style/style_setting_title"
+        />
+
+    <LinearLayout
+        style="@style/style_setting_linear"
+        >
+
+        <TextView
+            android:text="自动同步"
+            style="@style/style_setting_child_title"
+            />
+
+        <com.st.view.SwitchView
+            android:id="@+id/setting_synchro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        style="@style/style_gray_line"
+        />
+
+    <LinearLayout
+        android:id="@+id/setting_linear_net"
+        style="@style/style_setting_linear"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:text="网络环境"
+            style="@style/style_setting_child_title"
+            />
+
+        <TextView
+            android:id="@+id/setting_network"
+            android:text="4G/3G"
+            android:textSize="@dimen/text_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_net"
+        style="@style/style_gray_line"
+        android:visibility="gone"
+        />
+
+    <LinearLayout
+        android:id="@+id/setting_linear_wifi"
+        style="@style/style_setting_linear"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:text="仅Wi-Fi自动同步"
+            style="@style/style_setting_child_title"
+            />
+
+        <com.st.view.SwitchView
+            android:id="@+id/setting_wifi_synchro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_wifi"
+        style="@style/style_gray_line"
+        android:visibility="gone"
+        />
+
+    <LinearLayout
+        android:id="@+id/setting_linear_remind"
+        style="@style/style_setting_linear"
+        >
+
+        <TextView
+            android:text="同步提醒"
+            style="@style/style_setting_child_title"
+            />
+
+        <com.st.view.SwitchView
+            android:id="@+id/setting_remind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <View
+        style="@style/style_gray_line"
+        />
+
+    <LinearLayout
+        android:id="@+id/setting_linear_upRecord"
+        style="@style/style_setting_linear"
+        >
+
+        <TextView
+            android:text="上传打卡记录"
+            style="@style/style_setting_child_title"
+            />
+
+        <ImageView
+            android:src="@mipmap/setting_arrow_right"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:text="离线操作"
+        style="@style/style_setting_title"
+        />
+
+    <LinearLayout
+        android:id="@+id/setting_linear_cacheEmployee"
+        style="@style/style_setting_linear"
+        >
+
+        <TextView
+            android:text="缓存人员信息"
+            style="@style/style_setting_child_title"
+            />
+
+        <ImageView
+            android:src="@mipmap/setting_arrow_right"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        style="@style/style_gray_line"
+        />
+
+    <LinearLayout
+        android:id="@+id/setting_linear_cacheCourse"
+        style="@style/style_setting_linear"
+        >
+
+        <TextView
+            android:text="缓存课题信息"
+            style="@style/style_setting_child_title"
+            />
+
+        <ImageView
+            android:src="@mipmap/setting_arrow_right"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
